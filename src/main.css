@@ -1,0 +1,443 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* general */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  line-height: 1.5;
+}
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+.wrapper {
+  max-width: 768px;
+  margin: 0 auto;
+}
+/* used multiple times */
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.text-center {
+  text-align: center;
+}
+.padding {
+  padding: 80px 0;
+}
+.heading {
+  font-size: 44px;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgb(33, 34, 33);
+}
+
+/* header */
+.header {
+  background: #16212d;
+  /* line-height: 57px; */
+  padding: 10px;
+}
+.logo img {
+  width: 140px;
+}
+.nav-item {
+  margin-left: 30px;
+}
+.nav-item a {
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 500;
+  color: beige;
+  text-transform: uppercase;
+}
+.nav-item :hover {
+  color: #64bd9c;
+}
+
+/* to create drop down on more */
+.sub-menu-box {
+  position: absolute;
+  display: none;
+  padding-top: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.sub-menu {
+  text-align: center;
+  background: rgb(244, 247, 246);
+}
+.sub-menu a {
+  display: inline-block;
+  margin: 10px 25px;
+  color: #64bd9c;
+}
+.nav-last-item {
+  position: relative;
+}
+.nav-last-item:hover .sub-menu-box {
+  display: inline-block;
+}
+.bars,
+.toggle {
+  display: none;
+}
+
+/* hero */
+.hero {
+  background: linear-gradient(#2b4a56, #55a17f);
+  color: rgb(170, 190, 197);
+  padding: 120px 0;
+}
+.hero-heading {
+  font-size: 64px;
+  margin-bottom: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.hero-subheading {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* portfolio */
+.col {
+  width: 30%;
+  padding: 40px;
+  text-align: center;
+  margin: 20px 0;
+}
+.col img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+.col1 {
+  background: #ba4c63;
+}
+.col2 {
+  background: #53a4b6;
+}
+.col3 {
+  background: #130f0f;
+}
+.col4 {
+  background: #3b83c1;
+}
+.col5 {
+  background: #1840b5;
+}
+.col6 {
+  background: #ccb2a3;
+}
+
+/* about */
+.about {
+  background: linear-gradient(#2b4a56, #55a17f);
+  color: rgb(187, 190, 189);
+}
+.about h3 {
+  color: rgb(187, 190, 189);
+  margin-bottom: 20px;
+}
+.col-about {
+  width: 50%;
+  padding: 0 20px;
+}
+.btn {
+  padding: 12px 32px;
+  text-transform: capitalize;
+  font-weight: 600;
+  border: 1px solid black;
+  border-radius: 2px;
+  margin-top: 40px;
+  font-size: 16px;
+  color: rgb(17, 17, 17);
+}
+
+/* contact me */
+.form-input {
+  display: block;
+  padding: 16px 0;
+  font-size: 20px;
+  border: 0;
+  border-bottom: 1px solid rgb(153, 149, 149);
+  width: 100%;
+  margin-bottom: 20px;
+  outline: 0;
+  resize: none;
+}
+.form-btn {
+  padding: 12px 40px;
+  background: #376d5e;
+  border: 0;
+}
+
+/* map */
+.map {
+  background: #e5e3df;
+}
+
+/* table */
+.table {
+  width: 100%;
+  margin-top: 20px;
+}
+thead {
+  background: #1e2639;
+}
+th,
+td {
+  padding: 12px 24px;
+  text-align: left;
+  font-weight: 500;
+  font-size: 16px;
+}
+th {
+  color: rgb(14, 14, 112);
+}
+tbody tr:nth-child(odd) {
+  background: #2b3245;
+}
+tbody tr:nth-child(even) {
+  background: #323c50;
+}
+td:first-child {
+  color: crimson;
+}
+
+/* footer */
+.footer {
+  background: #1e2639;
+  color: rgb(213, 217, 219);
+}
+.footer .flex {
+  align-items: flex-start;
+}
+.footer-heading {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.social-menu-item a {
+  font-size: 24px;
+  color: rgb(213, 217, 219);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 1px solid rgb(213, 217, 219);
+  text-decoration: none;
+}
+/* .social-menu-item{
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid rgb(213, 217, 219);
+} */
+.footer-padding {
+  padding: 20px 0;
+  background: #19242e;
+  color: rgb(105, 106, 109);
+}
+
+/* responsive */
+@media all and (max-width: 768px) {
+  /* hero */
+  .hero-heading {
+    font-size: 40px;
+  }
+  .hero-subheading {
+    font-size: 14px;
+  }
+  .padding {
+    padding: 30px 0;
+  }
+  .heading {
+    font-size: 28px;
+  }
+  .logo img {
+    width: 80px;
+  }
+  .logo {
+    z-index: 999;
+    position: relative;
+  }
+  .nav-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    padding-top: 80px;
+    background: rgba(44, 62, 80, 0.856);
+  }
+  .nav-item a {
+    display: inline-block;
+    margin-bottom: 20px;
+  }
+  .bars {
+    display: inline-block;
+    font-size: 20px;
+    color: white;
+    z-index: 999;
+    position: relative;
+  }
+  .toggle:checked ~ .nav-menu {
+    display: inline-block;
+  }
+
+  .col,
+  .col-about {
+    width: 100%;
+  }
+  .col img {
+    width: 100%;
+  }
+  th,
+  td {
+    padding: 4px 5px;
+    font-size: 12px;
+    font-weight: 400;
+  }
+}
