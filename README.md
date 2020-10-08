@@ -1,68 +1,98 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Creating conduit
 
-## Available Scripts
+### Basic Informations:
 
-In the project directory, you can run:
+- BASE URL: https://mighty-oasis-08080.herokuapp.com/api/
 
-### `npm start`
+### API Info:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- List of tags (GET)
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+  - /api/tags
 
-### `npm test`
+- Login (POST)
+  - /api/user
+  - Data Sample: `{user: {email: "a@gmail.com", password: "hello123"}}`
+- Signup (POST)
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  - /api/users
+  - Data Sample: `{user: {email: "a@gmail.com", password: "hello123", username: "test123"}}`
 
-### `npm run build`
+- Verify User (GET)
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+  - /api/user
+  - You need to add `authorization: Token ..` in header
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+- Public Articles (GET)
+  - /api/articles?limit=10&offset=0
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Tech Stack
 
-### `npm run eject`
+- React Hooks
+- Formik
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+### Steps
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Day 1
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- [ ] React + React Router DOM + Formik setup
+- [ ] Home Page (Public) - 45 Minutes
+- [ ] Login Page - 30 Minutes
+- [ ] Signup Page - 30 Minutes
+- [ ] Private Articles Page
+- [ ] Complete Authentication - 90 Minutes
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+> React + React Router DOM + Formik setup
 
-## Learn More
+Setup create react app with the following requirements:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Install `react-router-dom`
+- Install `formik`
+- Setup `BrowserRouter` in `App` component
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+> Home Page (Public)
 
-### Code Splitting
+- List of 10 articles with title, description and read more button
+- List will be in the form of cards
+- Each card will contain tag, title, description (max 120 characters) and author info at the bottom
+- Author info will contain image, name and data article is posted
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
+> Login Page
 
-### Analyzing the Bundle Size
+- Email Field
+- Password Field
+- Login Button
+- Each field (email, and password) should contain client side form validation
+  - Email should contain `@`
+  - Password should be at-least 6 characters
+  - Password must contain a letter and a number
+  - No fields can be empty
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
+> Signup Page
 
-### Making a Progressive Web App
+- Email Field
+- Password Field
+- Username Field
+- Signup Button
+- Each field (email, and password) should contain client side form validation
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
+  - Email should contain `@`
+  - Password should be at-least 6 characters
+  - Password must contain a letter and a number
+  - No fields can be empty
+  - Username should be at-least 6 characters long
 
-### Advanced Configuration
+> Private Articles Page
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
+- List of 10 articles with title, description and read more button
+- List will be in the form of cards
+- Each card will contain tag, title, description (max 120 characters) and author info at the bottom
+- Author info will contain image, name and data article is posted
 
-### Deployment
+> Complete Authentication
 
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
+- Flow will be `login => if accurate data => private articles page`
+- Flow will be `signup => if account created => private articles page`
+- Hard refresh will validate and move to respective pages
 
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+#### Day 2
