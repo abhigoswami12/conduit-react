@@ -11,8 +11,10 @@
   - /api/tags
 
 - Login (POST)
+
   - /api/user
   - Data Sample: `{user: {email: "a@gmail.com", password: "hello123"}}`
+
 - Signup (POST)
 
   - /api/users
