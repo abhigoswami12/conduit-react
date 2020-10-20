@@ -1,0 +1,71 @@
+@tailwind base;
+
+@tailwind components;
+
+@tailwind utilities;
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+.shadow-inner {
+  box-shadow: inset 0 4px 8px 0 rgba(0, 0, 0, 0.06);
+}
+.btn {
+  @apply text-white px-10 tracking-wide py-2 bg-gray-800 rounded block mx-auto text-lg cursor-pointer outline-none;
+}
+.pos-sticky {
+  position: sticky;
+  top: 2%;
+}
+.m-initial {
+  margin: initial;
+}
+.disabled-btn {
+  @apply text-white px-10 tracking-wide py-2 bg-gray-500 rounded block mx-auto text-lg outline-none cursor-not-allowed;
+}
+.close-pos {
+  position: absolute;
+  top: 7%;
+  right: 22%;
+}
+
+.eye-pos {
+  position: absolute;
+  top: 29%;
+  right: 23%;
+}
+.active {
+  border-bottom: 1px solid green;
+}
+
+/* CSS For Spinner */
+
+@keyframes bouncing-loader {
+  to {
+    opacity: 0.1;
+    transform: translate3d(0, -1rem, 0);
+  }
+}
+
+.bouncing-loader {
+  display: flex;
+  justify-content: center;
+}
+
+.bouncing-loader > div {
+  width: 1rem;
+  height: 1rem;
+  margin: 3rem 0.2rem;
+  background: #8385aa;
+  border-radius: 50%;
+  animation: bouncing-loader 0.6s infinite alternate;
+}
+
+.bouncing-loader > div:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.bouncing-loader > div:nth-child(3) {
+  animation-delay: 0.4s;
+}

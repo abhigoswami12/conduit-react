@@ -1,9 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "./main.css";
-
-function App() {
-  return <h1>Hello World.</h1>;
-}
+import "./styles.css";
+import App from "./App";
 
 ReactDOM.render(<App />, document.getElementById("root"));
