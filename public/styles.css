@@ -21707,6 +21707,10 @@ video {
   right: 23%;
 }
 
+.active {
+  border-bottom: 1px solid green;
+}
+
 /* CSS For Spinner */
 
 @-webkit-keyframes bouncing-loader {

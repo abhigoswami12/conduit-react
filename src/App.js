@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 
 import HomePage from "./components/HomePage.js/HomePage";
 import Header from "./components/Header/Header";
@@ -10,6 +10,7 @@ import SingleArticle from "./components/SingleArticle";
 import CreateArticle from "./components/CreateArticle";
 import ShowTaggedArticles from "./components/ShowTaggedArticles";
 import Profile from "./components/Profile";
+import Login from "./components/Login.js/Login";
 
 function App() {
   const [showDialog, setShowDialog] = useState(false);
@@ -30,8 +31,8 @@ function App() {
     method: "GET",
     headers: {
       "Content-Type": "application/json",
-      Authorization: "Token " + localStorage.token
-    }
+      Authorization: "Token " + localStorage.token,
+    },
   });
 
   if (data && data.user && data.user._id !== (user && user._id)) {
@@ -83,7 +84,7 @@ function PrivateRoute(props) {
       <Route
         path="/articles/:slug"
         exact
-        render={renderProps => <SingleArticle {...renderProps} />}
+        render={(renderProps) => <SingleArticle {...renderProps} />}
       />
       <Route path="/articles/tags/:tag" exact>
         <ShowTaggedArticles
@@ -111,10 +112,13 @@ function PublicRoute(props) {
           activeModal={props.activeModal}
         />
       </Route>
+      <Route path="/articles" exact>
+        <Redirect to="/" component={<Login />} />
+      </Route>
       <Route
         path="/articles/:slug"
         exact
-        render={renderProps => <SingleArticle {...renderProps} />}
+        render={(renderProps) => <SingleArticle {...renderProps} />}
       />
       <Route path="/articles/tags/:tag" exact>
         <ShowTaggedArticles
