@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
 
 import HomePage from "./components/HomePage.js/HomePage";
 import Header from "./components/Header/Header";
@@ -10,7 +10,6 @@ import SingleArticle from "./components/SingleArticle";
 import CreateArticle from "./components/CreateArticle";
 import ShowTaggedArticles from "./components/ShowTaggedArticles";
 import Profile from "./components/Profile";
-import Login from "./components/Login.js/Login";
 
 function App() {
   const [showDialog, setShowDialog] = useState(false);
@@ -111,9 +110,6 @@ function PublicRoute(props) {
           close={props.close}
           activeModal={props.activeModal}
         />
-      </Route>
-      <Route path="/articles" exact>
-        <Redirect to="/" component={<Login />} />
       </Route>
       <Route
         path="/articles/:slug"
